@@ -16,8 +16,8 @@ exports.createStore = async (req, res) => {
   res.redirect(`/store/${store.slug}`);
 };
 
-// exports.viewStore = (req, res) => {
-//   res.render('viewStore', {
-//     title: req.params.slug
-//   });
-// };
+exports.viewStore = (req, res) => {
+  res.render('viewStore', {
+    title: req.params.slug
+  });
+};

@@ -10,6 +10,6 @@ router.get('/', storeController.homePage);
 router.get('/add', storeController.addStore);
 router.post('/add', catchErrors(storeController.createStore));
 
-// router.get('/store/:slug', storeController.viewStore);
+router.get('/store/:slug', storeController.viewStore);
 
 module.exports = router;

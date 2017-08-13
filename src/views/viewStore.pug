@@ -1,6 +1,7 @@
 extends layout
 
 block content
-  h1 #{title}
-  
-  p dynamic store info goes here...
+  .inner
+    h2 #{title}
+    
+    p= store.description

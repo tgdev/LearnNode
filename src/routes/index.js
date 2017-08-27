@@ -16,7 +16,7 @@ router.get('/', catchErrors(storeController.getStores));
 router.get('/stores', catchErrors(storeController.getStores));
 router.get('/stores/:slug', catchErrors(storeController.getStoreBySlug));
 
-router.get('/add', storeController.addStore);
+router.get('/add', authController.isLoggedIn, storeController.addStore);
 router.post('/add',
   storeController.upload,
   catchErrors(storeController.resize),
@@ -37,6 +37,8 @@ router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
 // User Routes
 // ======================================================
 router.get('/login', userController.loginForm);
+router.post('/login', authController.login);
+router.get('/logout', authController.logout);
 
 router.get('/register', userController.registerForm);
 router.post('/register',
